@@ -3,35 +3,38 @@ Comment
  */
 
  h1{
-    font-family:  'TH SarabunPSK';
+    font-family:  'Agency FB';
     font-size: 35pt;
+    
 
  }
  h2 {
-    font-family: 'TH SarabunPSK';
+    font-family: 'Agency FB';
     font-size: 30pt;
  }
 
-h1,h2{
+h1{
     text-shadow: 5px 5px 5px #795548;
 }
+h2{
+    text-shadow: 5px 5px 5px #FF0000;
+}
 body{
-    background-image: url(4172161.jpg);
+    background-image: url(skyline.gif);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 p {
-    background-image: url('4172161.jpg');
+    background-image: url(skyline.gif);
 }
 .box{
     width: 400px;
     height: 400px;
     color: rgb(255, 255, 255);
-    background-color: rgb(88, 90, 88);
-    background-image: url(cat1.jpg);
+    background-color: rgb(107, 111, 220);
+    
     text-align:  center;
-    border:  5px dashed rgb(0, 255, 0);
     padding-top:  50px;
     margin:  50px;
     transition: 1s;
@@ -41,9 +44,14 @@ p {
 }
 .box:hover{
     background-color: rgb(118, 11, 28);
+    background-image: url(giphy.gif);
+
+
+    background-size: 100;
+    box-shadow: 34px 34px 26px rgb(139, 2, 41);
 }
 a{
-    color: #010101;
+    color: #fcfcfc;
 }
 a:link{
     color: #FF0000;
