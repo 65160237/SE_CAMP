@@ -43,7 +43,6 @@ p {
     align-items: center;
 }
 .box:hover{
-    background-color: rgb(118, 11, 28);
     background-image: url(giphy.gif);
 
 
