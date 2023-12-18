@@ -33,7 +33,9 @@ p {
     height: 400px;
     color: rgb(255, 255, 255);
     background-color: rgb(107, 111, 220);
-    
+    background-image: url(gcat.gif);
+    background-size: 110%;
+
     text-align:  center;
     padding-top:  50px;
     margin:  50px;
@@ -58,3 +60,22 @@ a:link{
 .box:hover{
     transform: scale(1.2);
 }
+/* p.normal{
+    font-style: normal;
+    font-weight: bold;
+}
+p.italic{
+    font-style: italic;
+    font-weight: bold;
+}
+div > div > p {
+    font-size: larger;
+    font-weight: bold;
+}
+div > p{
+    font-size: smaller;
+    font-weight: bold;
+}
+.box2{
+    position: relative;
+} */
