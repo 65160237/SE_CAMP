@@ -6,10 +6,11 @@
     <link rel="stylesheet" href="mystylephp.Css">
     <style>
         div{
-            border: 5px solid white;
+            border: 10px solid black;
             color: rgb(255, 255, 255);
-            background-color: rgb(107, 111, 220);
+            background-color: #F2E9D3;
             background-size: 110%;
+            background-image: url(Screen);
     
         }
 

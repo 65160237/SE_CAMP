@@ -1,35 +1,27 @@
-<!DOCTYPE html>
-<html>
+<!-- สามารถปรับขนาดและรูปร่างหน้าตาที่บรรทัดด้านล่างนี้ได้ครับ -->
+<div style="width: 400px; height: 150px; overflow-y: 
+scroll; scrollbar-arrow-color:blue; 
+scrollbar-face-color: #e7e7e7; scrollbar-3dlight-color: #000000; 
+scrollbar-darkshadow-color:#f70000">
 
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="mystylephp.Css">
-    <style>
-        div{
-            border: 5px solid  ;
-    
-        }
-    </style>
-</head>
+<p align="left">
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
 
-<body>
-    <center>
-        <b>
-        <?php $multi_x = 2; $length_number = 24; ?>
-        <h1>ตารางสูตรคูณแม่ <?php echo $multi_x ?></h1>
-        <div style="width: 500px; height: 500px; overflow-y: scroll; 
-        scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; 
-        scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888">
-            <table>
-                <?php
-                for ($j = 1; $j <= $length_number; $j++) {
-                    echo "<tr><td>" . $multi_x . ' x ' . $j . ' = ' . ($multi_x * $j) . "<br><br>\n";
-                }
-                ?>
-            </table>
-        </div>
-        </b>
-    </center>
-</body>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
 
-</html>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+ใส่ข้อความของคุณที่นี่<br>
+</p>
+
+</div>
