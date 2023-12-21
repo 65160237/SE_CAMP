@@ -1,0 +1,16 @@
+h1{
+    font-size: 30pt;
+    text-shadow: 5px 5px 5px #212121;
+    color: white;
+
+ }
+ body{
+    background-image: url(Pixelart.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+table{
+    color: white;
+}
+ 

@@ -6,13 +6,9 @@
     <link rel="stylesheet" href="mystylephp.Css">
     <style>
         div{
-            border: 5px solid white;
-            color: rgb(255, 255, 255);
-            background-color: rgb(107, 111, 220);
-            background-size: 110%;
+            border: 5px solid  ;
     
         }
-
     </style>
 </head>
 
@@ -20,8 +16,8 @@
     <center>
         <b>
         <?php $multi_x = 2; $length_number = 24; ?>
-        <h1 clss >ตารางสูตรคูณแม่ <?php echo $multi_x ?></h1>
-        <div style="width: 500px; height: 600px; overflow-y: scroll; 
+        <h1>ตารางสูตรคูณแม่ <?php echo $multi_x ?></h1>
+        <div style="width: 500px; height: 500px; overflow-y: scroll; 
         scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; 
         scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888">
             <table>
@@ -33,7 +29,7 @@
             </table>
         </div>
         </b>
-    
     </center>
 </body>
+
 </html>
