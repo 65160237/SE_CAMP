@@ -9,8 +9,9 @@
             border: 10px solid black;
             color: rgb(255, 255, 255);
             background-color: #F2E9D3;
-            background-size: 110%;
-            background-image: url(Screen);
+            background-size: 50%;
+            background-image: url(Gift.gif);
+            
     
         }
 
