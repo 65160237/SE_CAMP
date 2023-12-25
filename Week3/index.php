@@ -14,7 +14,12 @@
             
     
         }
-
+        body{
+    background-image: url(Merry.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
     </style>
 </head>
 

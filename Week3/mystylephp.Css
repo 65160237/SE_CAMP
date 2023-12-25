@@ -4,14 +4,14 @@ h1{
     color: white;
 
  }
- body{
-    background-image: url(Merry.gif);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
 table{
     color: black;
     font-size: 15pt;
     
+}
+body{
+    background-image: url(Merry.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
