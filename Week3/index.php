@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -28,9 +29,12 @@
         <b>
         <?php $multi_x = 2; $length_number = 24; ?>
         <h1 clss >ตารางสูตรคูณแม่ <?php echo $multi_x ?></h1>
-        <div style="width: 500px; height: 600px; overflow-y: scroll; 
-        scrollbar-arrow-color:blue; scrollbar-face-color: #e7e7e7; 
-        scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888">
+        <div style="width: 500px; height: 600px;
+        overflow-y: scroll; 
+        scrollbar-arrow-color:blue; 
+        scrollbar-face-color: #e7e7e7; 
+        scrollbar-3dlight-color: #a0a0a0; 
+        scrollbar-darkshadow-color:#888888">
             <table>
                 <?php
                 for ($j = 1; $j <= $length_number; $j++) {
