@@ -12,10 +12,8 @@ class MyController extends Controller
 
       }
     public function index(){
-        $data = ['val_a' => 'Hello World!'];
-        $data['val_b'] = "Laravel";
-        return view('myfolder.mypage',$data);
-        return view('welcome');
+        return view('home');
+
     }
     public function store(Request $req){
         $data['myinput'] =  $req->input('myinput');
