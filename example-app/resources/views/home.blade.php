@@ -8,7 +8,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0"><b style="text-decoration: underline;">Workshop #SE-FORM</b></h1>
+              <h1 class="m-0"><b>Workshop #SE-FORM</b></h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -133,10 +133,11 @@
             </div>
 
             {{-- --เช็ค-- --}}
-            <div class="custom-control custom-checkbox">
+            <div class="form-check">
                 <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="checkbox" id="customCheckbox5" checked>
                 <label for="customCheckbox5" class="custom-control-label" style="color: red; ">ยินยอมให้เก็บข้อมูล</label>
               </div>
+
 
         </div>
         {{-- --ปุ่ม-- --}}
