@@ -75,12 +75,15 @@
             <div class="form-group">
                 <label for="exampleInputFile" style="color: black;">รูปภาพ</label>
                 <div class="input-group">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="InputFile">
-                        <label class="custom-file-label">เลือกไฟล์</label>
-                    </div>
-                </div>
-            </div>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="InputFile">
+                    <label class="custom-file-label" for="InputFile">เลือกไฟล์</label>
+                  </div>
+                  <div class="input-group-append">
+                    <span class="input-group-text">Upload</span>
+                  </div>
+                </div><br>
+
             {{-- --ที่อยู่-- --}}
             <div class="form-group">
                 <b><label style="color: black;">ที่อยู่</label></b>
@@ -130,10 +133,10 @@
             </div>
 
             {{-- --เช็ค-- --}}
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1" style="color: red;">ยินยอมให้เก็บข้อมูล</label>
-            </div>
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input custom-control-input-danger custom-control-input-outline" type="checkbox" id="customCheckbox5" checked>
+                <label for="customCheckbox5" class="custom-control-label" style="color: red; ">ยินยอมให้เก็บข้อมูล</label>
+              </div>
 
         </div>
         {{-- --ปุ่ม-- --}}
