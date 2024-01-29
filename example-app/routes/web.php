@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\MyController;
+use App\Http\Controller\C_titles;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +36,8 @@ use App\Http\Controllers\MyController;
 //     return view('back', $data);
 // });
 
+Route::resource('titles', C_titles::class);
+
 Route::get('/my-controller',[MyController::class,'index']);
 Route::get('/my-controller2','App\Http\Controllers\MyController@index');
 
@@ -48,7 +51,6 @@ Route::get('/', function () {
     return view('welcome'); // welcome.blade.php
 });
 
-// use Illuminate\Http\Request;
 
 Route::get('/my-route', function(){
     // return view('myroute');
