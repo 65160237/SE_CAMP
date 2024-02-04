@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\C_titles;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\MyController;
@@ -34,6 +34,7 @@ use App\Http\Controllers\MyController;
 //     $data['back'] = $req->input('back');
 //     return view('back', $data);
 // });
+Route::resource('titles', C_titles::class);
 
 Route::get('/my-controller',[MyController::class,'index']);
 Route::get('/my-controller2','App\Http\Controllers\MyController@index');
