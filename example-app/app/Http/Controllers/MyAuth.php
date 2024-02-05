@@ -27,6 +27,7 @@ class MyAuth extends Controller
             return Redirect::to('login');
         }
     }
+    
 
     function logout_process(){
         Auth::logout();
@@ -53,3 +54,4 @@ class MyAuth extends Controller
         return Redirect::to('login');
     }
 }
+

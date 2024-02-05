@@ -35,6 +35,19 @@ use App\Http\Controllers\MyController;
 //     $data['back'] = $req->input('back');
 //     return view('back', $data);
 // });
+
+// routes/web.php
+
+use Illuminate\Support\Facades\Auth;
+
+// ... other routes ...
+
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/login'); // Redirect to the desired page after logout
+})->name('logout');
+
+
 Route::get('/login', [MyAuth::class, 'login_view'])->name('login');
 Route::get('/register', [MyAuth::class, 'register_view']);
 Route::get('/logout', [MyAuth::class, 'logout_process']);
