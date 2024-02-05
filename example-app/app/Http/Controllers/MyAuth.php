@@ -46,6 +46,8 @@ class MyAuth extends Controller
 
         $data = $req->all();
 
+        $data['password'] = bcrypt($data['password']);
+
         User::create($data);
 
         return Redirect::to('login');
