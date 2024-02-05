@@ -65,27 +65,6 @@
                     <!-- /.card -->
                 </div>
             </div>
-                <!-- Main content -->
-    <div class="content">
-        <div class="container-fluid">
-            <!-- ... (existing code) ... -->
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- ... (existing code) ... -->
-
-                    <form method="post" action="{{ url('/logout') }}">
-                        @csrf
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('คุณต้องการออกจากระบบ');">ออกจากระบบ</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- ... (existing code) ... -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
@@ -134,6 +113,11 @@
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-
+    <form method="post" action="{{ url('/logout') }}">
+        @csrf
+        <div class="card-footer">
+            <button type="submit" class="btn btn-danger"
+                onclick="return confirm('คุณต้องการออกจากระบบ');">ออกจากระบบ</button>
+        </div>
+    </form>
 @endsection
-

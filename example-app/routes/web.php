@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\C_titles;
 use App\Http\Controllers\MyAuth;
 use Illuminate\Support\Facades\Route;
@@ -36,15 +37,9 @@ use App\Http\Controllers\MyController;
 //     return view('back', $data);
 // });
 
-// routes/web.php
-
-use Illuminate\Support\Facades\Auth;
-
-// ... other routes ...
-
-Route::post('/logout', function () {
+Route::post('logout', function () {
     Auth::logout();
-    return redirect('/login'); // Redirect to the desired page after logout
+    return redirect('login'); // Redirect to the desired page after logout
 })->name('logout');
 
 
@@ -55,16 +50,16 @@ Route::post('/login', [MyAuth::class, 'login_process']);
 Route::post('/register', [MyAuth::class, 'register_process']);
 
 Route::resource('titles', C_titles::class)->middleware('auth');
-Route::middleware('auth')->group(function(){
+Route::middleware('auth')->group(function () {
     // auth first
 });
 
-Route::get('/my-controller',[MyController::class,'index']);
-Route::get('/my-controller2','App\Http\Controllers\MyController@index');
+Route::get('/my-controller', [MyController::class, 'index']);
+Route::get('/my-controller2', 'App\Http\Controllers\MyController@index');
 
-Route::namespace('App\Http\Controllers')->group(function(){
-    Route::get('/my-controller3','MyController@index');
-    Route::get('/my-controller3-post','MyController@store');
+Route::namespace('App\Http\Controllers')->group(function () {
+    Route::get('/my-controller3', 'MyController@index');
+    Route::get('/my-controller3-post', 'MyController@store');
 });
 Route::resource('/my-controller4', MyController::class);
 
@@ -74,16 +69,16 @@ Route::get('/', function () {
 
 // use Illuminate\Http\Request;
 
-Route::get('/my-route', function(){
+Route::get('/my-route', function () {
     // return view('myroute');
     //        Key    =>  Value
     $data = ['val_a' => 'Hello World!'];
     $data['val_b'] = "Laravel";
-    return view('myfolder.mypage',$data);
+    return view('myfolder.mypage', $data);
 });
 
 
-Route::post('/my-route', function(Request $req){
+Route::post('/my-route', function (Request $req) {
     $data['myinput'] =  $req->input('myinput');
     return view('myroute', $data);
 });
