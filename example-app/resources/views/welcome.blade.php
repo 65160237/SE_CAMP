@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html>
 
 <head>
@@ -6,18 +6,34 @@
 </head>
 
 <body>
-    <h1 id="myh1">Javascript</h1>
+    <h1 id="myh1">
+    </h1>
     <button onclick="alert('Hello World!')">Click Me!</button>
-    <input type="text" id="my_number">
+    <input type="text" id="my_number" value="10">
     <button onclick="myFunction()">submit number</button>
+    <br>
+    <br>
+    <button onclick="myFunction2()">submit my function2</button>
+    <br>
+    <table id="my_table">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>result</td>
+            </tr>
+        </thead>
+        <tbody id="my_tbody">
+
+        </tbody>
+    </table>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
             console.log("Hello World - document.ready")
             console.log($('#myh1').text())
             console.log($('#my_number').val())
-            $('#myh1').text("Javascript 101")
-            $('#my_number').val(100)
+            $('#myh1').text("แม่สูตรคูณ")
+            $('#my_number').val(24)
             // setInterval(() => {
             //     $('#myh1').after(`<h1 class="my_gen_number">setInterval</h1>`)
             // }, 2000);
@@ -86,6 +102,200 @@
         }
         */
     </script>
+
+</body>
+</html> --}}
+
+
+
+{{-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 101</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        #my_number {
+            border: 1px solid #000;
+            /* กำหนดเส้นขอบเป็นสีดำ */
+            padding: 5px;
+            /* เพิ่มระยะห่างระหว่างข้อความและขอบ */
+            border-radius: 5px;
+            /* ทำให้มีเส้นขอบโค้งเล็กน้อย */
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <center>
+        <div id="container">
+            <h1>ตารางสูตรคูณแม่</h1>
+            <div>
+                <label for="number">กรอกค่าตัวเลข : </label>
+                <input type="text" id="my_number">
+                <button id="summit">ตกลง</button>
+                <button id="clear">ลบทิ้ง</button>
+            </div>
+
+            <div id="answer">
+                <!-- Table will be generated here -->
+            </div>
+        </div>
+    </center>
+    <script>
+        $(document).ready(function() {
+            $("#summit").click(function() {
+                var number = $("#my_number").val();
+                if (number !== "" && !isNaN(number)) {
+                    multi(parseInt(number));
+                } else {
+                    alert("ได้โปรดกรอกค่าที่เป็นตัวเลข");
+                }
+            });
+
+            $("#clear").click(function() {
+                clearTable();
+            });
+
+            function clearTable() {
+                $("#my_number").val("");
+                $("#answer").empty();
+            }
+
+            function multi(number) {
+                var table = "<table><thead><tr><th>สูตรคูณแม่ " + number + "</th></tr></thead><tbody>";
+                for (var i = 1; i <= 24; i++) {
+                    table += "<tr><td>" + number + " x " + i + " = " + (number * i) + "</td></tr>";
+                }
+                table += "</tbody></table>";
+                $("#answer").html(table);
+            }
+        });
+    </script>
+</body> --}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 101</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <center>
+        <h1> ตารางสูตรคูณแม่ </h1>
+    </center>
+    <center>
+        <div>
+            <label for="number">กรอกค่าตัวเลข : </label>
+            <input type="text" id="my_number">
+            <button id="summit">ตกลง</button>
+            <button id="clear">ลบทิ้ง</button>
+        </div>
+
+        <div id="answer">
+            <!-- Table will be generated here -->
+        </div>
+    </center>
+    <script>
+        $(document).ready(function() {
+            $("#summit").click(function() {
+                var number = $("#my_number").val();
+                if (number !== "" && !isNaN(number)) {
+                    multi(parseInt(number));
+                } else {
+                    alert("ได้โปรดกรอกค่าที่เป็นตัวเลข");
+                }
+            });
+
+            $("#clear").click(function() {
+                clearTable();
+            });
+
+            function clearTable() {
+                $("#my_number").val("");
+                $("#answer").empty();
+            }
+
+            function multi(number) {
+                var table = "<tr><th>สูตรคูณแม่ " + number + "</th></tr>";
+                for (var i = 1; i <= 24; i++) {
+                    table += "<tr><td>" + number + " x " + i + " = " + (number * i) + "</td></tr>";
+                }
+                $("#answer").html(table);
+            }
+        });
+    </script>
+
+
 </body>
 
 </html>
