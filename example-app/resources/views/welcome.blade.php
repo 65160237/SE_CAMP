@@ -44,8 +44,8 @@
             let my_number = parseInt($('#my_number').val())
             let my_code_tr = ``
             for (let i = 1; i <= 24; i++) {
-                    my_code_tr += "<tr><td>" + my_number + " x " + i + " = " + (my_number * i) + "</td></tr>";
-                }
+                my_code_tr += "<tr><td>" + my_number + " x " + i + " = " + (my_number * i) + "</td></tr>";
+            }
             $('#my_tbody').html(my_code_tr)
         }
 
@@ -104,8 +104,193 @@
     </script>
 
 </body>
+
 </html> --}}
 
+
+<!DOCTYPE html>
+
+<head>
+    <title>Javascript 101</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #table {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #summit {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #summit:hover {
+            background-color: #0056b3;
+        }
+
+        #clear {
+            background-color: #dd191d;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #clear:hover {
+            background-color: #b0120a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #5677fc;
+            color: #fff;
+        }
+
+        #my_number {
+            border: 1px solid #000;
+            padding: 8px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <center>
+        <div id="table">
+            <h1>ตารางสูตรคูณแม่</h1>
+            <div>
+                <label for="number">กรอกค่าตัวเลข : </label>
+                <input type="text" id="my_number">
+                <button id="summit" class="summit">ตกลง</button>
+                <button id="clear" class="clear">ลบทิ้ง</button>
+            </div>
+
+            <div id="answer"></div>
+        </div>
+    </center>
+    <script>
+        $(document).ready(function() {
+            $("#summit").click(function() {
+                let number = $("#my_number").val();
+                if (number !== "" && !isNaN(number)) {
+                    multi(parseInt(number));
+                } else {
+                    alert("ได้โปรดกรอกค่าที่เป็นตัวเลข!!!!!");
+                }
+            });
+
+            $("#clear").click(function() {
+                clearTable();
+            });
+
+            function clearTable() {
+                $("#my_number").val("");
+                $("#answer").empty();
+            }
+
+            function multi(number) {
+                let result = "<table><thead><tr><th>สูตรคูณแม่ " + number + "</th></tr></thead><tbody>";
+                for (let i = 1; i <= 24; i++) {
+                    result += "<tr><td>" + number + " x " + i + " = " + (number * i) + "</td></tr>";
+                }
+                result += "</tbody></table>";
+                $("#answer").html(result);
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+{{--
+<!DOCTYPE html>
+
+<head>
+    <title>Javascript 101</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <center>
+        <h1> ตารางสูตรคูณแม่ </h1>
+    </center>
+    <center>
+        <div>
+            <label for="number">กรอกค่าตัวเลข : </label>
+            <input type="text" id="my_number">
+            <button id="summit">ตกลง</button>
+            <button id="clear">ลบทิ้ง</button>
+        </div>
+        <table id="my_table">
+            <tbody id="answer"></tbody>
+        </table>
+    </center>
+    <script>
+        $(document).ready(function() {
+            $("#summit").click(function() {
+                let number = $("#my_number").val();
+                let result = "<tr><th>สูตรคูณแม่ " + number + "</th></tr>";
+                for (let i = 1; i <= 24; i++) {
+                    result += "<tr><td>" + number + " x " + i + " = " + (number * i) + "</td></tr>";
+                }
+                $("#answer").html(result);
+
+            });
+
+            $("#clear").click(function() {
+                clearTable();
+            });
+
+            function clearTable() {
+                $("#my_number").val("");
+                $("#answer").empty();
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
 
 {{-- <!DOCTYPE html>
 <html lang="en">
@@ -148,23 +333,13 @@
             border-radius: 5px;
         }
 
-        button.clear {
-            background-color: #dd191d;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        button.clear:hover {
-            background-color: #b0120a;
-        }
-
-        button.summit {
+        button {
             background-color: #007bff;
             color: #fff;
             cursor: pointer;
         }
 
-        button.summit:hover {
+        button:hover {
             background-color: #0056b3;
         }
 
@@ -182,90 +357,10 @@
         }
 
         th {
-            background-color: #5677fc;
+            background-color: #007bff;
             color: #fff;
         }
-
-        #my_number {
-            border: 1px solid #000;
-            padding: 8px;
-            border-radius: 5px;
-        }
-
-        #container > div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        #container > div > label {
-            margin-right: 10px;
-        }
-
-        #answer {
-            margin-top: 20px;
-        }
     </style>
-</head>
-<body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <center>
-        <div id="container">
-            <h1>ตารางสูตรคูณแม่</h1>
-            <div>
-                <label for="number">กรอกค่าตัวเลข : </label>
-                <input type="text" id="my_number">
-                <button id="summit" class="summit">ตกลง</button>
-                <button id="clear" class="clear">ลบทิ้ง</button>
-            </div>
-
-            <div id="answer">
-                <!-- Table will be generated here -->
-            </div>
-        </div>
-    </center>
-    <script>
-        $(document).ready(function() {
-            $("#summit").click(function() {
-                var number = $("#my_number").val();
-                if (number !== "" && !isNaN(number)) {
-                    multi(parseInt(number));
-                } else {
-                    alert("ได้โปรดกรอกค่าที่เป็นตัวเลข");
-                }
-            });
-
-            $("#clear").click(function() {
-                clearTable();
-            });
-
-            function clearTable() {
-                $("#my_number").val("");
-                $("#answer").empty();
-            }
-
-            function multi(number) {
-                var table = "<table><thead><tr><th>สูตรคูณแม่ " + number + "</th></tr></thead><tbody>";
-                for (var i = 1; i <= 24; i++) {
-                    table += "<tr><td>" + number + " x " + i + " = " + (number * i) + "</td></tr>";
-                }
-                table += "</tbody></table>";
-                $("#answer").html(table);
-            }
-        });
-    </script>
-</body>
-
-</html> --}}
-
-
-
-
-<!DOCTYPE html>
-
-<head>
-    <title>Javascript 101</title>
 </head>
 
 <body>
@@ -282,18 +377,20 @@
         </div>
 
         <div id="answer">
-            <!-- Table will be generated here -->
+            <!-- ตำแหน่งแสดงข้อมูล multi(number) -->
         </div>
     </center>
     <script>
         $(document).ready(function() {
             $("#summit").click(function() {
                 let number = $("#my_number").val();
-                if (number !== "" && !isNaN(number)) {
-                    multi(parseInt(number));
+                if (number !== "" && !isNaN(
+                        number)) { // isNaN(number) ตรวจสอบตัวเลขเพื่อคืนค่า true ที่รับเข้ามาเป็นตัวเลข
+                    multi(parseInt(number)); //number !== "" ตรวจสอบว่าตัวแปร number ไม่เป็นสตริงว่าง
                 } else {
                     alert("ได้โปรดกรอกค่าที่เป็นตัวเลขเท่านั้น!!!");
                 }
+
             });
 
             $("#clear").click(function() {
@@ -306,17 +403,18 @@
             }
 
             function multi(number) {
-                let table = "<tr><th>สูตรคูณแม่ " + number + "</th></tr>";
+                // let result = "<tr><th>สูตรคูณแม่ " + number + "</th></tr>";
+                let echo = ``
+                result = "<tr><th>สูตรคูณแม่ " + number + "</th></tr>";
                 for (let i = 1; i <= 24; i++) {
-                    table += "<tr><td>" + number + " x " + i + " = " + (number * i) + "</td></tr>";
+                    result += "<tr><td>" + number + " x " + i + " = " + (number * i) + "</td></tr>";
                 }
-                $("#answer").html(table);
+                $("#answer").html(result);
             }
         });
-
     </script>
 
 
 </body>
 
-</html>
+</html> --}}
