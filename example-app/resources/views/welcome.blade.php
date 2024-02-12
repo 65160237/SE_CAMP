@@ -43,9 +43,9 @@
             // $($('#my_table').children()[1]).html("<tr><td>1</td><td>test</td></tr>")
             let my_number = parseInt($('#my_number').val())
             let my_code_tr = ``
-            for (let i = 0; i < my_number; i++) {
-                my_code_tr += `<tr><td>${i}</td><td>test</td></tr>`
-            }
+            for (let i = 1; i <= 24; i++) {
+                    my_code_tr += "<tr><td>" + my_number + " x " + i + " = " + (my_number * i) + "</td></tr>";
+                }
             $('#my_tbody').html(my_code_tr)
         }
 
@@ -107,7 +107,6 @@
 </html> --}}
 
 
-
 {{-- <!DOCTYPE html>
 <html lang="en">
 
@@ -149,13 +148,23 @@
             border-radius: 5px;
         }
 
-        button {
+        button.clear {
+            background-color: #dd191d;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button.clear:hover {
+            background-color: #b0120a;
+        }
+
+        button.summit {
             background-color: #007bff;
             color: #fff;
             cursor: pointer;
         }
 
-        button:hover {
+        button.summit:hover {
             background-color: #0056b3;
         }
 
@@ -173,31 +182,42 @@
         }
 
         th {
-            background-color: #007bff;
+            background-color: #5677fc;
             color: #fff;
         }
 
         #my_number {
             border: 1px solid #000;
-            /* กำหนดเส้นขอบเป็นสีดำ */
-            padding: 5px;
-            /* เพิ่มระยะห่างระหว่างข้อความและขอบ */
+            padding: 8px;
             border-radius: 5px;
-            /* ทำให้มีเส้นขอบโค้งเล็กน้อย */
+        }
+
+        #container > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        #container > div > label {
+            margin-right: 10px;
+        }
+
+        #answer {
+            margin-top: 20px;
         }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
-
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <center>
         <div id="container">
             <h1>ตารางสูตรคูณแม่</h1>
             <div>
                 <label for="number">กรอกค่าตัวเลข : </label>
                 <input type="text" id="my_number">
-                <button id="summit">ตกลง</button>
-                <button id="clear">ลบทิ้ง</button>
+                <button id="summit" class="summit">ตกลง</button>
+                <button id="clear" class="clear">ลบทิ้ง</button>
             </div>
 
             <div id="answer">
@@ -235,21 +255,21 @@
             }
         });
     </script>
-</body> --}}
+</body>
+
+</html> --}}
+
 
 
 
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript 101</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <center>
         <h1> ตารางสูตรคูณแม่ </h1>
     </center>
@@ -268,11 +288,11 @@
     <script>
         $(document).ready(function() {
             $("#summit").click(function() {
-                var number = $("#my_number").val();
+                let number = $("#my_number").val();
                 if (number !== "" && !isNaN(number)) {
                     multi(parseInt(number));
                 } else {
-                    alert("ได้โปรดกรอกค่าที่เป็นตัวเลข");
+                    alert("ได้โปรดกรอกค่าที่เป็นตัวเลขเท่านั้น!!!");
                 }
             });
 
@@ -286,13 +306,14 @@
             }
 
             function multi(number) {
-                var table = "<tr><th>สูตรคูณแม่ " + number + "</th></tr>";
-                for (var i = 1; i <= 24; i++) {
+                let table = "<tr><th>สูตรคูณแม่ " + number + "</th></tr>";
+                for (let i = 1; i <= 24; i++) {
                     table += "<tr><td>" + number + " x " + i + " = " + (number * i) + "</td></tr>";
                 }
                 $("#answer").html(table);
             }
         });
+
     </script>
 
 
